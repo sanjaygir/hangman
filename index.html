@@ -20,7 +20,14 @@
 	    
 	xhttp.onreadystatechange = function() {
   	  if (this.readyState == 4 && this.status == 200) {
-    	    document.getElementById("demo").innerHTML = this.responseText;
+    		  
+		  var words = JSON.parse(this.responseText);
+
+		  
+		  for(let i=0; i<words.length; i++){
+			console.log(words[i]);	  
+		  }
+		  
   	  }
 	};
 	xhttp.open("GET", "wordlist.json", true);
